@@ -1,89 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trinh Tan Minh</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Thiệp Mừng 20/10 Gửi Bích Ngọc</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background-color: #1a1a1a; /* Màu nền dự phòng */
+            /* Đã cập nhật URL hình nền do liên kết cũ có thể bị lỗi */
+            background-image: url('https://i.pinimg.com/originals/8b/44/9a/8b449a6470f5a77094d4d6588f4384a3.jpg'); /* URL hình nền họa tiết cổ điển mới */
+            background-size: cover; /* Đảm bảo hình nền che phủ toàn bộ */
+            background-position: center; /* Căn giữa hình nền */
+            background-blend-mode: multiply; /* Hòa trộn để tạo hiệu ứng sang trọng */
+            background-color: #351a1a; /* Màu nền đậm hơn để hòa trộn */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            perspective: 1000px;
+            overflow: hidden;
+        }
+        .card-container {
+            width: 350px;
+            height: 500px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            cursor: pointer;
+        }
+        .card-container.flipped {
+            transform: rotateY(180deg);
+        }
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            overflow: hidden;
+        }
+        .card-front {
+            background: linear-gradient(135deg, #4a0e0e, #2c0808);
+            border: 2px solid #d4af37;
+        }
+        .card-back {
+            background: #fdf6e3;
+            transform: rotateY(180deg);
+            color: #333;
+        }
+        .decorative-border {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            border-radius: 8px;
+        }
+        .name-font {
+            font-family: 'Great Vibes', cursive;
+            color: #d4af37;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+        }
+        .main-text-color {
+            color: #59351a;
+        }
+
+        /* Dải lụa */
+        .ribbon {
+            position: absolute;
+            width: 8px;
+            height: 100%;
+            background: #d4af37;
+            left: 50px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.4);
+        }
+        
+        /* Hiệu ứng lấp lánh */
+        .sparkle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: #fff;
+            border-radius: 50%;
+            opacity: 0;
+            animation: sparkle-animation 2s infinite;
+        }
+        @keyframes sparkle-animation {
+            0%, 100% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        .sparkle:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .sparkle:nth-child(2) { top: 40%; left: 80%; animation-delay: 0.3s; }
+        .sparkle:nth-child(3) { top: 70%; left: 25%; animation-delay: 0.6s; }
+        .sparkle:nth-child(4) { top: 90%; left: 60%; animation-delay: 0.9s; }
+        .sparkle:nth-child(5) { top: 10%; left: 50%; animation-delay: 1.2s; }
+
+    </style>
 </head>
-<body style="background-image: url('/assets/images/Blade-Runner.jpg'); background-size: auto; background-position: center;">
-    <div class="container pb-5">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/index.html">TRINH TAN MINH</a>
-                <div class="flex-container">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav">
-                            <a class="nav-link active" aria-current="page" href="/index.html">HOME</a>
-                            <a class="nav-link" href="/about.html">ABOUT</a>
-                            <a class="nav-link" href="/skills.html">SKILLS</a>
-                            <a class="nav-link" href="/contact.html">CONTACT</a>
-                        </div>
-                    </div>
-                </div>
+<body>
+
+    <div id="card" class="card-container">
+        <!-- Mặt trước thiệp --><div class="card-face card-front flex flex-col justify-center items-center p-6 text-center">
+            <div class="decorative-border"></div>
+            <div class="ribbon"></div>
+
+            <!-- Các đốm lấp lánh --><div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+
+            <div class="relative z-10">
+                <p class="text-2xl text-gray-300" style="letter-spacing: 2px;">Trân trọng gửi đến</p>
+                <h1 class="name-font text-7xl my-4">Bích Ngọc</h1>
+                <p class="text-gray-300 text-lg mt-8 animate-pulse">(Nhấp vào để mở thiệp)</p>
             </div>
-        </nav>
-        <section class="hero">
-            <div class="hero-content text-start">
-                <h1 class="pe-5">IT IS A GREAT HONOR TO HAVE YOU VISIT</h1>
-                <p>LET'S EXPLORE ABOUT ME!</p>
-                <a href="/about.html" class="custom-btn">Explore</a>
-                <img class="mt-5" src="/assets/images/Group 1840.png" alt="hinh-1" width="300px" height="auto">
+        </div>
+        <!-- Mặt sau thiệp (nội dung) --><div class="card-face card-back flex flex-col justify-center p-8">
+             <div class="decorative-border border-amber-800/30"></div>
+            <div class="text-center w-full">
+                <h2 class="name-font text-6xl main-text-color mb-4">Thân gửi,</h2>
+                <p class="main-text-color text-xl leading-relaxed mb-6">
+                    Nhân ngày Phụ nữ Việt Nam 20/10, chúc nàng Bích Ngọc luôn kiêu sa, lộng lẫy và ngập tràn hạnh phúc.
+                </p>
+                <p class="main-text-color text-xl leading-relaxed">
+                    Mong rằng mọi điều tốt đẹp và an lành nhất sẽ luôn đến bên nàng, tựa như một viên ngọc quý luôn tỏa sáng rực rỡ.
+                </p>
+                <p class="text-2xl mt-8 main-text-color" style="letter-spacing: 1px;">
+                    Thân gửi!
+                </p>
+                <p class="name-font text-4xl mt-2 main-text-color" style="color: #59351a;">
+                    Trịnh Tấn Minh
+                </p>
             </div>
-            <div class="text-end ps-3 pb-5">
-                <img class="img-fluid" src="/assets/images/hinh-5.png" alt="hinh-2" width="auto" height="auto">
-            </div>
-            
-        </section>
+        </div>
     </div>
 
-    <footer class="py-5">
-        <div class="container pb-5">
-          <div class="row">
-            <!-- About Section -->
-            <div class="col-12 col-md-4 mb-4 mb-md-0">
-              <h5>ABOUT TRỊNH TẤN MINH</h5>
-              <p>My name is Trịnh Tấn Minh.</p>
-              <p>I was born on August 21, 2002. I am currently a student at Van Lang University. I am studying Information Technology.</p>
-              <div class="d-flex gap-3 social-icons">
-                <a href="https://www.behance.net/trinhtanminh" class="text-white" target="_blank" aria-label="Behance"><i class="fab fa-behance"></i></a>
-                <a href="https://www.facebook.com/trinhtanminh2002/" class="text-white" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/trinhtanminh.official" class="text-white" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.youtube.com/@trinhtanminh.official" class="text-white" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-              </div>
-            </div>
-      
-            <!-- Contact Section -->
-            <div class="col-12 col-md-4 mb-4 mb-md-0">
-              <h5>GET IN TOUCH</h5>
-              <ul class="list-unstyled">
-                <li><strong>Email:</strong> <a href="mailto:trinhtanminh2k2@gmail.com" class="text-white">trinhtanminh2k2@gmail.com</a></li>
-                <li><strong>Phone:</strong> <a href="tel:+84352186775" class="text-white">0352186775</a></li>
-                <li><strong>GitHub:</strong> <a href="https://github.com/trinhtanminh" class="text-white" target="_blank">github.com/trinhtanminh</a></li>
-              </ul>
-            </div>
-      
-            <!-- Skills Section -->
-            <div class="col-12 col-md-4 pb-5">
-              <h5>SKILLS</h5>
-              <ul class="list-unstyled">
-                <li>UX/UI Design, Figma, Adobe XD</li>
-                <li>HTML, CSS, JavaScript, React, Laravel</li>
-                <li>Responsive Design, Prototyping, User Research</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <hr class="pt-5">
-        <div class="text-center">
-            <p class="mb-0 small">© COPYRIGHT 2025 YM SHOP. ALL RIGHTS RESERVED</p>
-        </div>
-    </footer>
+    <script>
+        const card = document.getElementById('card');
+        card.addEventListener('click', function() {
+            card.classList.toggle('flipped');
+        });
+    </script>
 </body>
-
 </html>
+
